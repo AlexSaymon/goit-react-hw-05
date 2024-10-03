@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { fetchTrendingMovies } from "../../services/api";
+import { fetchAllMovies } from "../../services/api";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { toast, ToastContainer } from "react-toast";
 
@@ -19,16 +19,16 @@ const MoviesPage = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchTrendingMovies();
+      const data = await fetchAllMovies(query);
       setMovies(data);
 
-      if (filteredData.length < 1 && query !== "") {
+      if (data.length < 1 && query !== "") {
         toast.error("No results found");
       }
     };
 
     getData();
-  }, [filteredData.length, query]);
+  }, [query]);
 
   const handleChangeQuery = (newQuery) => {
     if (!newQuery) {

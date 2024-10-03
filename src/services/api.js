@@ -19,6 +19,16 @@ export const fetchTrendingMovies = async () => {
   return data.results;
 };
 
+export const fetchAllMovies = async (query) => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US`,
+    options
+  );
+  console.log(data);
+
+  return data.results;
+};
+
 export const fetchConfiguration = async () => {
   const { data } = await axios.get("https://api.themoviedb.org/3/configuration", options);
   return data;
