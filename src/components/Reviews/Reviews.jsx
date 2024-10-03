@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchReviews } from "../../Services/api";
+import { fetchReviews } from "../../services/api";
 import { useParams } from "react-router-dom";
 import s from "./Reviews.module.css";
 import { GoPersonFill } from "react-icons/go";

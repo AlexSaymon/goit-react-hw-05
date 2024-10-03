@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useParams, useLocation } from "react-router-dom";
-import { fetchMovieById } from "../../Services/api";
+import { fetchMovieById } from "../../services/api";
 import s from "./MovieDetailsPage.module.css";
 import { GoArrowLeft } from "react-icons/go";
 

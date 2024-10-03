@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
-import { fetchCredits } from "../../Services/api";
+import { fetchCredits } from "../../services/api";
 import { useParams } from "react-router-dom";
 import s from "./Cast.module.css";
 

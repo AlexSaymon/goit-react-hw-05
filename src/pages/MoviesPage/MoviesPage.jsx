@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { fetchTrendingMovies } from "../../Services/api";
+import { fetchTrendingMovies } from "../../services/api";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { toast, ToastContainer } from "react-toast";
 
