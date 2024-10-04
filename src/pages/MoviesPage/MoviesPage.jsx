@@ -8,7 +8,6 @@ import MovieList from "../../components/MovieList/MovieList";
 const MoviesPage = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [visibleMovies, setVisibleMovies] = useState(false);
 
   const query = searchParams.get("query") ?? "";
 
@@ -31,13 +30,12 @@ const MoviesPage = () => {
     }
     searchParams.set("query", newQuery);
     setSearchParams(searchParams);
-    setVisibleMovies(true);
   };
 
   return (
     <div>
       <SearchBar handleChangeQuery={handleChangeQuery} />
-      {visibleMovies && <MovieList movies={allMovies} />}
+      {allMovies.length > 0 && <MovieList movies={allMovies} />}
       <ToastContainer />
     </div>
   );
